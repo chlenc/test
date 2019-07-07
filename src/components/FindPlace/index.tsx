@@ -6,6 +6,8 @@ import PlaceDetail from "../PlaceDetail";
 import {connect} from 'react-redux'
 import {TPlace} from "../../store/reducers/places";
 import {addPlace, deletePlace, deselectPlace, selectPlace} from "../../store/actions";
+import {NavigationParams, NavigationScreenProp, NavigationState} from "react-navigation";
+import {navScreens} from "../AppWrapper/NavigatintWrapper";
 
 interface IProps {
     onAddPlace: (name: string) => void,
@@ -14,9 +16,15 @@ interface IProps {
     onDeselectPlace: () => void,
     places: TPlace[]
     selectedPlace: TPlace | null
+    // navigation: NavigationScreenProp<NavigationState, NavigationParams>
 }
 
-class App extends React.Component<IProps> {
+class FindPlace extends React.Component<IProps> {
+
+    // static navigationOptions = {
+    //     title: navScreens.FindScreen,
+    // };
+
     handleAdd = (name: string) => this.props.onAddPlace(name);
 
     handleDelete = () => this.props.onDeletePlace();
@@ -36,7 +44,7 @@ class App extends React.Component<IProps> {
             <PlaceList onItemSelect={this.handleSelect} places={this.props.places}/>
         </View>;
     }
-};
+}
 
 const styles = StyleSheet.create({
     root: {
@@ -70,4 +78,4 @@ const mapDispachToProps = (dispach: any) => ({
     }
 });
 
-export default connect(mapStateToProps, mapDispachToProps)(App)
+export default connect(mapStateToProps, mapDispachToProps)(FindPlace)

@@ -1,5 +1,5 @@
 import {AppRegistry} from 'react-native';
-import App from './src/components/AppWrapper';
+import App from './src/components/AppWrapper/NavigatintWrapper';
 import {name as appName} from './app.json';
 
 

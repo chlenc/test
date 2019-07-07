@@ -1,5 +1,5 @@
 import {Provider} from "react-redux";
-import App from "../App";
+import App from "../FindPlace";
 import React from "react";
 import configureStore from "../../store/configureStore";
 
