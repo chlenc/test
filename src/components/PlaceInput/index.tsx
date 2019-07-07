@@ -33,7 +33,7 @@ export default class PlaceInput extends React.Component <IProps, IState> {
                         style={styles.textInput}
                         value={this.state.placeName}
                         onChangeText={(e) => this.handlerEdit(e)}
-                        placeholder="An awesome place"
+                        placeholder="Where we will live with pups"
                     />
                     <Button color={"blue"} title="Add" onPress={this.handleAdd}/>
                 </View>
