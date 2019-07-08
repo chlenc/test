@@ -1,11 +1,10 @@
 import React from 'react';
 import {View, Text, Button} from "react-native";
 import {NavigationInjectedProps,} from 'react-navigation';
-import {navScreens} from "../AppWrapper/NavigatintWrapper";
+import { navScreens } from "../AppWrapper/NavigatintWrapper";
 
 
 class Auth extends React.Component<NavigationInjectedProps> {
-
 
     static navigationOptions = {
         title: 'AuthScreen'//navScreens.AuthScreen,
@@ -16,8 +15,7 @@ class Auth extends React.Component<NavigationInjectedProps> {
         return <View>
             <Text>Auth Screen</Text>
             <Button title="Auth" onPress={() => {
-                navigation.navigate(navScreens.ShareScreen);
-                // navigation.navigate(navScreens.FindScreen);
+                navigation.navigate(navScreens.FindScreen);
             }}/>
         </View>;
     }

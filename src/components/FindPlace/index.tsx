@@ -6,8 +6,6 @@ import PlaceDetail from "../PlaceDetail";
 import {connect} from 'react-redux'
 import {TPlace} from "../../store/reducers/places";
 import {addPlace, deletePlace, deselectPlace, selectPlace} from "../../store/actions";
-import {NavigationParams, NavigationScreenProp, NavigationState} from "react-navigation";
-import {navScreens} from "../AppWrapper/NavigatintWrapper";
 
 interface IProps {
     onAddPlace: (name: string) => void,
@@ -68,13 +66,16 @@ const mapDispachToProps = (dispach: any) => ({
         dispach(out)
     },
     onDeletePlace: () => {
-        dispach(deletePlace())
+         const out = deletePlace();
+        dispach(out)
     },
     onSelectPlace: (key: number) => {
-        dispach(selectPlace(key))
+        const out = selectPlace(key);
+        dispach(out)
     },
     onDeselectPlace: () => {
-        dispach(deselectPlace())
+         const out = deselectPlace();
+        dispach(out)
     }
 });
 

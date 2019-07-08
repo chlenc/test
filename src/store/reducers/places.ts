@@ -1,6 +1,6 @@
-// import images from "../../assets/images.json";
-import {ImageSourcePropType} from "react-native";
-import {ADD_PLACE, DELETE_PLACE, DESELECT_PLACE, SELECT_PLACE} from "../actions/actionTypes";
+import images from "../../assets/images.json";
+import { ImageSourcePropType } from "react-native";
+import { ADD_PLACE, DELETE_PLACE, DESELECT_PLACE, SELECT_PLACE } from "../actions/actionTypes";
 
 export type TPlace = {
     key: number
@@ -21,9 +21,7 @@ const initionalState: IPlacesState = {
     selectedPlace: null,
     places: [
         'Moscow', 'London', 'Paris',
-    ].map(name => ({key: uid(), name
-        // , image: {uri: images.bali}
-    }))
+    ].map(name => ({key: uid(), name, image: {uri: images.bali}}))
 };
 
 const reducer = (state = initionalState, action: any) => {
@@ -34,7 +32,7 @@ const reducer = (state = initionalState, action: any) => {
                 places: state.places.concat({
                     key: uid(),
                     name: action.placeName,
-                    // image: {uri: images.bali}
+                    image: {uri: images.bali}
                 })
             };
         case DELETE_PLACE:

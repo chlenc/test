@@ -9,17 +9,16 @@ export enum navScreens {
     ShareScreen = 'ShareScreen',
 };
 
-// const map: NavigationRouteConfigMap = {
-//     [navScreens.AuthScreen]: {
-//         screen: Auth,
-//         // FindScreen: {screen: FindPlace},
-//         [navScreens.ShareScreen]: {screen: Share},
-//     }
-// }
-//
-//
-// const MainNavigator = createStackNavigator(map);
-//
-// const App = createAppContainer(MainNavigator);
-//
-// export default App;
+const map: NavigationRouteConfigMap = {
+    [navScreens.AuthScreen]: {screen: Auth},
+        [navScreens.FindScreen]: {screen: FindPlace},
+        [navScreens.ShareScreen]: {screen: Share},
+
+}
+
+
+const MainNavigator = createStackNavigator(map);
+
+const App = createAppContainer(MainNavigator);
+
+export default App;
