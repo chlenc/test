@@ -14,9 +14,15 @@ interface IProps {
     onDeselectPlace: () => void,
     places: TPlace[]
     selectedPlace: TPlace | null
+    // navigation: NavigationScreenProp<NavigationState, NavigationParams>
 }
 
-class App extends React.Component<IProps> {
+class FindPlace extends React.Component<IProps> {
+
+    // static navigationOptions = {
+    //     title: navScreens.FindScreen,
+    // };
+
     handleAdd = (name: string) => this.props.onAddPlace(name);
 
     handleDelete = () => this.props.onDeletePlace();
@@ -36,7 +42,7 @@ class App extends React.Component<IProps> {
             <PlaceList onItemSelect={this.handleSelect} places={this.props.places}/>
         </View>;
     }
-};
+}
 
 const styles = StyleSheet.create({
     root: {
@@ -60,14 +66,17 @@ const mapDispachToProps = (dispach: any) => ({
         dispach(out)
     },
     onDeletePlace: () => {
-        dispach(deletePlace())
+         const out = deletePlace();
+        dispach(out)
     },
     onSelectPlace: (key: number) => {
-        dispach(selectPlace(key))
+        const out = selectPlace(key);
+        dispach(out)
     },
     onDeselectPlace: () => {
-        dispach(deselectPlace())
+         const out = deselectPlace();
+        dispach(out)
     }
 });
 
-export default connect(mapStateToProps, mapDispachToProps)(App)
+export default connect(mapStateToProps, mapDispachToProps)(FindPlace)

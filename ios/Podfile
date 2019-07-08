@@ -30,6 +30,10 @@ target 'MyAwesomeProject' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'RNGestureHandler', :podspec => '../node_modules/react-native-gesture-handler/RNGestureHandler.podspec'
+
+
+
   target 'MyAwesomeProjectTests' do
     inherit! :search_paths
     # Pods for testing

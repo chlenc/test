@@ -1,6 +1,6 @@
 import images from "../../assets/images.json";
-import {ImageSourcePropType} from "react-native";
-import {ADD_PLACE, DELETE_PLACE, DESELECT_PLACE, SELECT_PLACE} from "../actions/actionTypes";
+import { ImageSourcePropType } from "react-native";
+import { ADD_PLACE, DELETE_PLACE, DESELECT_PLACE, SELECT_PLACE } from "../actions/actionTypes";
 
 export type TPlace = {
     key: number
@@ -20,7 +20,7 @@ function uid() {
 const initionalState: IPlacesState = {
     selectedPlace: null,
     places: [
-        // 'Moscow', 'London', 'Paris',
+        'Moscow', 'London', 'Paris',
     ].map(name => ({key: uid(), name, image: {uri: images.bali}}))
 };
 
